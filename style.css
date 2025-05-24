@@ -195,9 +195,8 @@ section {
     display: flex;
     flex-direction: column; /* Stack images vertically */
     align-items: center; /* Center images horizontally */
-    justify-content: center; /* Center images vertically */
+    height: 400px; /* Maintain height */
     width: 600px; /* Maintain width */
-    height: auto; /* Allow height to adjust based on content */
     margin: auto 0;
     gap: 1rem; /* Space between images */
 }
