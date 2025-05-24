@@ -189,12 +189,13 @@ section {
   gap: 5rem;
   height: 80vh;
   margin: 0 auto; /* Center section */
+  overflow: hidden; /* Ensure image doesn’t overflow */
 }
 
 .section__pic-container {
   display: flex;
   height: 400px;
-  width: 200px;
+  width: 400px;
   margin: auto 0;
 }
 
