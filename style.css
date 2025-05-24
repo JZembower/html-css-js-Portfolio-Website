@@ -416,7 +416,8 @@ footer p {
 }
 
 .blog-img {
-  max-width: 100%;
+  max-width: 500px;
+  height: auto;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
