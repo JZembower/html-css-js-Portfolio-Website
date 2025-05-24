@@ -192,20 +192,10 @@ section {
 }
 
 .section__pic-container {
-    display: flex;
-    flex-direction: column; /* Stack images vertically */
-    align-items: center; /* Center images horizontally */
-    height: 400px; /* Maintain height */
-    width: 600px; /* Maintain width */
-    margin: auto 0;
-    gap: 1rem; /* Space between images */
-}
-
-.about-pic {
-    max-width: 100%; /* Ensure images don't exceed container width */
-    max-height: 300px; /* Set a max height for each image */
-    object-fit: cover; /* Maintain aspect ratio */
-    border-radius: 10px; /* Consistent with other image styles */
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
 }
 
 .section__text {
