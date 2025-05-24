@@ -194,9 +194,8 @@ section {
 .section__pic-container {
   display: flex;
   height: 400px;
-  width: 400px;
+  width: 600px;
   margin: auto 0;
-  overflow: hidden; /* Ensure image doesn’t overflow */
 }
 
 .section__text {
