@@ -209,29 +209,6 @@ section {
     border-radius: 10px; /* Consistent with other image styles */
 }
 
-@media (max-width: 768px) {
-    #about {
-        flex-direction: column;
-        height: auto;
-        padding: 2rem;
-    }
-
-    .section__pic-container {
-        width: 100%; /* Full width on smaller screens */
-        max-width: 400px; /* Limit max width */
-        align-items: center;
-    }
-
-    .about-pic {
-        max-height: 200px; /* Smaller images on mobile */
-    }
-
-    .section-container {
-        flex-direction: column; /* Stack image container and text vertically */
-        align-items: center;
-    }
-}
-
 .section__text {
   align-self: center;
   text-align: center;
