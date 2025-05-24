@@ -189,7 +189,6 @@ section {
   gap: 5rem;
   height: 80vh;
   margin: 0 auto; /* Center section */
-  overflow: hidden; /* Ensure image doesn’t overflow */
 }
 
 .section__pic-container {
@@ -197,6 +196,7 @@ section {
   height: 400px;
   width: 400px;
   margin: auto 0;
+  overflow: hidden; /* Ensure image doesn’t overflow */
 }
 
 .section__text {
