@@ -7,68 +7,76 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
     <style>
-      /* Minimal inline styles to ensure the page looks artsy even if external CSS isn't loaded.
-         Prefer to move these into style.css if you want a single styles file. */
-      body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#1b1b1f; background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 50%); margin:0; padding:0 20px; }
-      nav#desktop-nav { display:flex; align-items:center; justify-content:space-between; padding:20px 0; }
-      nav#desktop-nav .logo { font-weight:700; letter-spacing:0.4px; color:#0b3b6f; font-size:1.05rem; }
-      .title { text-align:center; margin-top:8px; font-size:2rem; color:#0b3b6f; }
+      /* Minimal inline styles to ensure the page looks polished even if external CSS isn't loaded.
+         Move these into style.css if you prefer a single stylesheet. */
+      :root{
+        --brand-900:#08305a;
+        --brand-700:#0b3b6f;
+        --muted:#6b7683;
+        --card-shadow: 0 8px 20px rgba(11,59,111,0.04);
+      }
+      *{box-sizing:border-box}
+      body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#111827; background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 50%); margin:0; padding:0 20px; }
+      nav#desktop-nav { display:flex; align-items:center; justify-content:space-between; padding:20px 0; max-width:1100px; margin:0 auto; }
+      nav#desktop-nav .logo { font-weight:700; letter-spacing:0.4px; color:var(--brand-700); font-size:1.05rem; }
+      nav#desktop-nav ul { display:flex; gap:12px; list-style:none; margin:0; padding:0; align-items:center; }
+      nav#desktop-nav a { color:var(--muted); text-decoration:none; font-size:0.95rem; }
       .employment-wrap { max-width:1100px; margin:28px auto; display:grid; grid-template-columns: 1fr; gap:28px; padding-bottom:60px; }
       .hero {
-        background: linear-gradient(135deg, rgba(11,59,111,0.06), rgba(255,175,189,0.04));
-        border-radius:14px; padding:22px; display:flex; gap:18px; align-items:center; box-shadow: 0 8px 24px rgba(8,15,30,0.05);
+        background: linear-gradient(135deg, rgba(11,59,111,0.06), rgba(255,175,189,0.03));
+        border-radius:14px; padding:22px; display:flex; gap:18px; align-items:center; box-shadow: 0 8px 24px rgba(8,15,30,0.04);
       }
       .hero .left { flex:1; }
-      .hero h3 { margin:0 0 6px 0; color:#09325a; font-size:1.25rem; }
+      .hero h3 { margin:0 0 6px 0; color:var(--brand-900); font-size:1.25rem; }
       .hero p { margin:0; color:#334152; opacity:0.95; }
       .hero .badges { margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
-      .badge { background:linear-gradient(90deg,#fff,#fff); border:1px solid #e6eef8; padding:6px 10px; border-radius:999px; font-size:0.85rem; color:#0b3b6f; box-shadow: 0 2px 8px rgba(11,59,111,0.05); }
+      .badge { background:#fff; border:1px solid #e6eef8; padding:6px 10px; border-radius:999px; font-size:0.85rem; color:var(--brand-700); box-shadow: 0 2px 8px rgba(11,59,111,0.03); }
       .cards { display:grid; gap:18px; }
       .card {
         background: linear-gradient(180deg, #ffffff, #fbfdff);
         border-radius: 12px;
         padding:18px;
         display:grid;
-        grid-template-columns: 200px 1fr;
+        grid-template-columns: 220px 1fr;
         gap:18px;
         align-items:start;
-        box-shadow: 0 8px 20px rgba(11,59,111,0.04);
+        box-shadow: var(--card-shadow);
       }
       .card figure { margin:0; }
-      .card img { width:200px; height:140px; object-fit:cover; border-radius:10px; display:block; border:4px solid #fff; box-shadow:0 6px 18px rgba(9,50,90,0.06); cursor:pointer; }
-      .card h4 { margin:0 0 6px 0; color:#08305a; }
-      .meta { font-size:0.9rem; color:#46566a; margin-bottom:6px; }
+      .card img { width:220px; height:150px; object-fit:cover; border-radius:10px; display:block; border:4px solid #fff; box-shadow:0 6px 18px rgba(9,50,90,0.06); cursor:pointer; }
+      .card h4 { margin:0 0 6px 0; color:var(--brand-900); font-size:1.05rem; }
+      .meta { font-size:0.9rem; color:var(--muted); margin-bottom:6px; }
       .impact { background:#f0fbf5; border-left:4px solid #06a06b; padding:10px; border-radius:6px; margin-top:8px; color:#0b4f36; font-weight:600; }
       .skills { margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; }
       .skill-pill { background:#eef6ff; border:1px solid #e1efff; padding:6px 10px; border-radius:999px; color:#065aa2; font-size:0.85rem; }
-      .cta { margin-top:12px; }
-      .gallery { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
-      .small { width:130px; height:84px; object-fit:cover; border-radius:8px; border:3px solid #fff; box-shadow:0 8px 20px rgba(9,50,90,0.06); cursor:pointer; }
+      .cta { margin-top:12px; color:var(--muted); }
       footer { text-align:center; padding:36px 0 80px; color:#7b8896; }
       /* Lightbox */
       #lightbox { position:fixed; inset:0; display:none; background:rgba(8,15,30,0.75); align-items:center; justify-content:center; z-index:9999; }
       #lightbox img { max-width:92%; max-height:86%; border-radius:8px; box-shadow:0 18px 50px rgba(0,0,0,0.6); }
+      #lightbox .close { position:absolute; top:24px; right:28px; color:#fff; font-size:18px; background:transparent; border:none; cursor:pointer; }
       @media (max-width:900px) {
-        .card { grid-template-columns: 1fr; }
-        .hero { flex-direction:column; align-items:flex-start; }
+        .card { grid-template-columns: 1fr; text-align:left; }
+        .card img { width:100%; height:240px; }
+        nav#desktop-nav { padding:14px 0; }
       }
     </style>
 </head>
 <body>
-  <nav id="desktop-nav">
+  <nav id="desktop-nav" aria-label="Main navigation">
     <div class="logo">Jonah Robert Zembower</div>
-    <ul style="list-style:none;display:flex;gap:12px;margin:0;padding:0;">
+    <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="research.html">Research</a></li>
-      <li><a href="employment.html">Employment</a></li>
+      <li><a href="employment.html" aria-current="page">Employment</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <main class="employment-wrap">
-    <header class="hero">
+    <header class="hero" role="banner">
       <div class="left">
         <h3>Employment Experience — Design, Data & Operations</h3>
         <p>Combining rigorous data analysis with human-centered operations improvements to deliver immediate savings and scalable processes across large-scale facilities.</p>
@@ -82,7 +90,7 @@
         </div>
       </div>
 
-      <div class="right" style="min-width:260px; text-align:right;">
+      <div class="right" style="min-width:240px; text-align:right;">
         <div style="font-size:0.9rem; color:#334152;">Highlight</div>
         <div class="impact" aria-live="polite">Generated immediate cost savings of <strong>$6,000</strong> in the first implementation week at Walmart ACC 7377; created a scalable dashboard & process ready to expand across shifts and sites.</div>
       </div>
@@ -91,24 +99,24 @@
     <section class="cards" aria-label="Work experiences">
 
       <!-- Walmart Card -->
-      <article class="card" id="walmart">
+      <article class="card" id="walmart" aria-labelledby="walmart-title">
         <figure>
-          <!-- Use the converted image filename (see conversion instructions below). -->
-          <img src="assets/IMG_6597.jpg" alt="Walmart consolidation center team photo" id="img-walmart" loading="lazy">
+          <!-- Single image used here for Walmart experience -->
+          <img src="images/IMG_5995.jpg" alt="Walmart consolidation center team" id="img-walmart" data-full="images/IMG_5995.jpg" loading="lazy">
         </figure>
         <div>
-          <h4>Walmart — Operations Management Analyst Intern (ACC 7377)</h4>
+          <h4 id="walmart-title">Walmart — Operations Management Analyst Intern (ACC 7377)</h4>
           <div class="meta">Lebanon, PA — Summer Internship & Operations Collaboration</div>
 
           <p>
-            Collaborated cross-functionally with the Engineering and Operations teams at Consolidation Center (ACC) 7377,
-            under the guidance of Greg Beard (SSE Engineer) and Andri Sarmiento (Operations Manager), to optimize the label
-            placement and printing process. Designed an automated data dashboard to collect and analyze label-print checks in
-            real-time and provide actionable alerts for quality issues.
+            Collaborated cross-functionally with the Engineering and Operations teams at Consolidation Center (ACC 7377,
+            under the guidance of Greg Beard (SSE Engineer) and Andri Sarmiento (Operations Manager)) to optimize the label
+            placement and printing process. Designed and implemented a dashboard to automate collection and analysis of label checks,
+            enabling real-time detection and resolution of label quality issues.
           </p>
 
           <ul>
-            <li>Designed and implemented a data dashboard to automate collection & analysis of print label checks for immediate root-cause detection.</li>
+            <li>Designed and implemented a data dashboard to automate collection & analysis of print label checks for real-time root-cause detection.</li>
             <li>Generated immediate cost savings of <strong>$6,000</strong> during the initial implementation week vs the same period in 2024.</li>
             <li>Established a repeatable, scalable process with potential for substantial additional savings when applied across shifts and other consolidation centers.</li>
             <li>Worked closely with Greg Beard (SSE Engineer) and Andri Sarmiento (Operations Manager) to validate operational assumptions and implement solutions on the floor.</li>
@@ -123,30 +131,30 @@
           </div>
 
           <div class="cta">
-            <small style="color:#7b8896;">Role: data-driven process design & operations partnership — emphasis on real-time labeling quality control.</small>
+            <small>Role: data-driven process design & operations partnership — emphasis on real-time labeling quality control.</small>
           </div>
         </div>
       </article>
 
       <!-- Peak Performance Biomechanics Card -->
-      <article class="card" id="biomech">
+      <article class="card" id="biomech" aria-labelledby="biomech-title">
         <figure>
-          <img src=".assets/Biomechanics.jpeg" alt="Peak Performance Biomechanics team / lab photo" id="img-biomech" loading="lazy">
+          <!-- Single image used here for Peak Performance Biomechanics experience -->
+          <img src="images/20250723_154155571_iOS.jpg" alt="Peak Performance Biomechanics team" id="img-biomech" data-full="images/20250723_154155571_iOS.jpg" loading="lazy">
         </figure>
         <div>
-          <h4>Peak Performance Biomechanics — Biomechanical Data Specialist Intern</h4>
+          <h4 id="biomech-title">Peak Performance Biomechanics — Biomechanical Data Specialist Intern</h4>
           <div class="meta">Biomechanics Analysis & Client Reporting</div>
 
           <p>
-            Executed comprehensive analysis of biomechanical and ergonomic data using Noraxon, then advanced processing in
-            Python and R. Built client-specific visualizations from IMU and EMG data to highlight the metrics that matter and
-            to quantify progress across interventions.
+            Executed comprehensive analysis of biomechanical and ergonomic data using Noraxon, and advanced processing in
+            Python and R. Built client-specific visualizations from IMU and EMG data to highlight key metrics and quantify progress.
           </p>
 
           <ul>
             <li>Analyzed IMU & EMG datasets with Noraxon software and exported processed signals for statistical analysis in Python/R.</li>
-            <li>Created clear, client-facing reports and annotated visualizations to show progress and recommended next steps.</li>
-            <li>Translated complex biomechanical signals into actionable coaching cues and measurable KPI improvements.</li>
+            <li>Created clear, client-facing visualizations and reports that demonstrate progress and provide actionable recommendations.</li>
+            <li>Translated complex biomechanical signals into coaching cues and measurable KPI improvements for clients.</li>
           </ul>
 
           <div class="skills">
@@ -158,26 +166,18 @@
           </div>
 
           <div class="cta">
-            <small style="color:#7b8896;">Deliverables: client reports, charts showing progress, and reproducible analysis notebooks.</small>
+            <small>Deliverables: client reports, annotated visualizations, and reproducible analysis notebooks.</small>
           </div>
         </div>
       </article>
 
     </section>
 
-    <section aria-label="Photos gallery" style="max-width:1100px;">
-      <h4 style="color:#08305a;margin:12px 0 8px 0;">Photos from the field</h4>
-      <p style="margin:0 0 10px 0; color:#526077;">Click images to view larger. (Place converted JPG/PNG files into /images/.)</p>
-
-      <div class="gallery">
-        <img src=".assets/IMG_6597.jpg" class="small" alt="Walmart team" data-full="assets/IMG_6957.jpg.jpg">
-        <img src=".assets/Biomechanics.jpeg" class="small" alt="Peak Performance Biomechanics team" data-full="assets/Biomechanics.jpeg">
-      </div>
-    </section>
-
   </main>
 
-  <div id="lightbox" role="dialog" aria-hidden="true">
+  <!-- Lightbox -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="close" aria-label="Close image">✕</button>
     <img src="" alt="Expanded image preview">
   </div>
 
@@ -186,36 +186,57 @@
   </footer>
 
   <script>
-    // Small lightbox implementation — opens clicked thumbnail in full viewport
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('img');
-    document.querySelectorAll('[data-full]').forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.getAttribute('data-full');
+    // Basic lightbox that opens the clicked experience image.
+    (function(){
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = lightbox.querySelector('img');
+      const closeBtn = lightbox.querySelector('.close');
+
+      function openLightbox(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || 'Expanded image preview';
         lightbox.style.display = 'flex';
         lightbox.setAttribute('aria-hidden','false');
-      });
-    });
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox || e.target === lightboxImg) {
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
         lightbox.style.display = 'none';
         lightbox.setAttribute('aria-hidden','true');
-        lightboxImg.src = '';
+        lbImg.src = '';
+        document.body.style.overflow = '';
       }
-    });
 
-    // Also make the larger card images open the lightbox
-    document.getElementById('img-walmart').addEventListener('click', () => {
-      document.querySelector('[data-full="[data-full]"]'); // noop to silence linters; we attach click above
-      lightboxImg.src = document.getElementById('img-walmart').src;
-      lightbox.style.display = 'flex';
-      lightbox.setAttribute('aria-hidden','false');
-    });
-    document.getElementById('img-biomech').addEventListener('click', () => {
-      lightboxImg.src = document.getElementById('img-biomech').src;
-      lightbox.style.display = 'flex';
-      lightbox.setAttribute('aria-hidden','false');
-    });
+      // Add click listeners to each card image
+      const imgs = [
+        document.getElementById('img-walmart'),
+        document.getElementById('img-biomech')
+      ];
+
+      imgs.forEach(img => {
+        if (!img) return;
+        img.addEventListener('click', () => openLightbox(img.getAttribute('data-full') || img.src, img.alt));
+        img.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox(img.getAttribute('data-full') || img.src, img.alt);
+          }
+        });
+        // Make sure images are keyboard-focusable
+        img.tabIndex = 0;
+        img.setAttribute('role','button');
+        img.setAttribute('aria-label','Open image preview');
+      });
+
+      // close interactions
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function(e){
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
   </script>
 </body>
 </html>
