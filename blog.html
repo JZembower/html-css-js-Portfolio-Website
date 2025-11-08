@@ -1,107 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Information for Life — Blog</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
 </head>
 <body>
-    <nav id="desktop-nav">
-        <div class="logo">Jonah Robert Zembower</div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="employment.html">Employment</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+  <nav id="desktop-nav">
+    <div class="logo">Jonah Robert Zembower</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="employment.html">Employment</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="blog-hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h1 id="hero-title">Information for Life</h1>
+        <p>Thoughtful notes where data, systems thinking, and everyday practice meet — short guides, experiments, and essays aimed at improving large-scale operations and daily decisions.</p>
+        <p style="margin-top:.7rem; color:var(--muted); font-size:.95rem;">New posts and essays below — click any card to read more on Substack.</p>
+      </div>
+      <div class="hero-badge" aria-hidden="true">
+        <img src="./assets/Information for Life.png" alt="Information for Life badge" />
+        <small style="color:var(--muted); font-size:.86rem;">Curated & written by Jonah</small>
+      </div>
+    </section>
+
+    <h2 class="section-title">Latest Science & Systems Posts</h2>
+
+    <!-- Grid -->
+    <section class="blog-grid" id="posts-grid">
+      <!-- Post 1 -->
+      <article class="post-card" data-delay="1" style="--i:0" data-tags="time-series">
+        <a class="thumb" href="https://jz25.substack.com/p/time-series-analysis" target="_blank" rel="noopener">
+          <img src="./assets/time_series.png" alt="time series visualization" loading="lazy" />
+        </a>
+        <div>
+          <h3>Time Series Analysis</h3>
+          <div class="post-meta">Oct 2025 • Analytics</div>
+          <p class="post-excerpt">Explore the intricacies of time series analysis and its applications in forecasting and large-scale operations planning.</p>
+          <div class="tags"><span class="tag">Forecasting</span><span class="tag">Python</span></div>
+          <a class="read-btn" href="https://jz25.substack.com/p/time-series-analysis" target="_blank" rel="noopener">Read on Substack</a>
+        </div>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="post-card" data-delay="2" style="--i:1" data-tags="physics">
+        <a class="thumb" href="https://jz25.substack.com/p/exploring-the-elegant-universe-by" target="_blank" rel="noopener">
+          <img src="./assets/Elegant_Universe.jpg" alt="elegant universe" loading="lazy" />
+        </a>
+        <div>
+          <h3>The Elegant Universe</h3>
+          <div class="post-meta">Sep 2025 • Ideas</div>
+          <p class="post-excerpt">A short reflection on string theory, complexity, and how elegant mathematical frameworks inspire engineering in the real world.</p>
+          <div class="tags"><span class="tag">Physics</span><span class="tag">Theory</span></div>
+          <a class="read-btn" href="https://jz25.substack.com/p/exploring-the-elegant-universe-by" target="_blank" rel="noopener">Read on Substack</a>
+        </div>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="post-card" data-delay="3" style="--i:2" data-tags="clustering">
+        <a class="thumb" href="https://jz25.substack.com/p/clustering-techniques-comprehensive" target="_blank" rel="noopener">
+          <img src="./assets/Clustered_Data.png" alt="clustered data visualization" loading="lazy" />
+        </a>
+        <div>
+          <h3>Clustering Techniques</h3>
+          <div class="post-meta">Aug 2025 • Data</div>
+          <p class="post-excerpt">A practical guide to clustering, from k-means to spectral clustering, with tips for production systems and scale.</p>
+          <div class="tags"><span class="tag">Clustering</span><span class="tag">ML</span></div>
+          <a class="read-btn" href="https://jz25.substack.com/p/clustering-techniques-comprehensive" target="_blank" rel="noopener">Read on Substack</a>
+        </div>
+      </article>
+
+      <!-- Additional post(s) -->
+      <article class="post-card" data-delay="4" style="--i:3" data-tags="life">
+        <a class="thumb" href="https://jz25.substack.com/p/focus-on-what-matters" target="_blank" rel="noopener">
+          <img src="./assets/Focus On What Matters.jpeg" alt="focus on what matters" loading="lazy" />
+        </a>
+        <div>
+          <h3>Keeping Doors Open</h3>
+          <div class="post-meta">Jul 2025 • Essays</div>
+          <p class="post-excerpt">Choosing which opportunities to pursue and when to consolidate — practical advice for building careers and systems with optionality.</p>
+          <div class="tags"><span class="tag">Strategy</span><span class="tag">Career</span></div>
+          <a class="read-btn" href="https://jz25.substack.com/p/focus-on-what-matters" target="_blank" rel="noopener">Read on Substack</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- call to substack -->
+    <section style="max-width:var(--max-width); margin: 0 auto 4rem; padding:0 1rem; text-align:center;">
+      <a class="read-btn" href="https://jz25.substack.com/" target="_blank" rel="noopener" style="display:inline-block;">Visit my Substack</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <nav>
+      <div class="nav-links-container">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="employment.html">Employment</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
+      </div>
     </nav>
-    <main>
-        <!-- Intro Section -->
-        <section id="intro">
-            <div class="intro-container">
-                <h1>Information for Life</h1>
-                <img src="./assets/Information for Life.png" alt="Information for Life" class="blog-img" />
-                <p>Welcome to Information for Life, where engaging insights meet practical applications. Explore topics inspired by my passions, academic pursuits, and everyday discoveries.</p>
-            </div>
-        </section>
+    <p>Copyright &#169; November 7, 2025 Jonah Robert Zembower. All Rights Reserved.</p>
+  </footer>
 
-        <!-- About Section -->
-        <section id="about-blog">
-            <div class="about-container">
-                <h2>About Information for Life</h2>
-                <p>Welcome to a blog dedicated to sharing practical and engaging insights from my passions and experiences. Discover tips, tools, and reflections to enrich your journey.</p>
-                <p><strong>Who Am I?</strong> My name is Jonah, a double major in Data Science and Exercise Science, driven by curiosity and a desire to uncover meaningful patterns in life.</p>
-                <p><strong>What Can You Expect Here?</strong> Insights on data science, health, personal growth, and practical advice to help you live a more informed and fulfilling life.</p>
-            </div>
-        </section>
-
-        <!-- Blog Posts Section -->
-        <section id="latest-blogs">
-            <h1 class="title">Science Blogs</h1>
-            <div class="blog-posts-row">
-                <!-- Blog Post 1 -->
-                <div class="blog-post">
-                    <h2>Time Series Analysis</h2>
-                    <img src="./assets/time_series.png" alt="Time Series Analysis" class="blog-img" />
-                    <p>Explore the intricacies of time series analysis and its applications in forecasting and data trends. How do we effetively look at time series data?</p>
-                    <button class="btn btn-color-2" onclick="location.href='https://jz25.substack.com/p/time-series-analysis'">Read More</button>
-                </div>
-
-                <!-- Blog Post 2 -->
-                <div class="blog-post">
-                    <h2>The Elegant Universe</h2>
-                    <img src="./assets/Elegant_Universe.jpg" alt="The Elegant Universe" class="blog-img" />
-                    <p>Dive into the fascinating insights of string theory, inspired by Brian Greene's "The Elegant Universe."</p>
-                    <button class="btn btn-color-2" onclick="location.href='https://jz25.substack.com/p/exploring-the-elegant-universe-by'">Read More</button>
-                </div>
-
-                <!-- Blog Post 3 -->
-                <div class="blog-post">
-                    <h2>Clustering Techniques</h2>
-                    <img src="./assets/Clustered_Data.png" alt="Clustering Techniques" class="blog-img" />
-                    <p>A comprehensive guide to clustering techniques and their real-world applications in data science.</p>
-                    <button class="btn btn-color-2" onclick="location.href='https://jz25.substack.com/p/clustering-techniques-comprehensive'">Read More</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Additional Blog Section -->
-        <section id="additional-blog">
-            <h1 class="title">Your Daily Dose of Wisdom</h1>
-            <div class="additional-blog-container">
-                <div class="blog-post">
-                    <h2>Keeping Doors Open</h2>
-                    <img src="./assets/Focus On What Matters.jpeg" alt="Keeping Doors Open" class="blog-img" />
-                    <p>We have so many opportunities in this world that pull for our attention. Is that actually hurting us? What is important?</p>
-                    <button class="btn btn-color-2" onclick="location.href='https://jz25.substack.com/p/focus-on-what-matters'">Read More</button>
-                </div>
-                <div class="btn-container">
-                    <button class="btn btn-color-2" onclick="location.href='https://jz25.substack.com/'">
-                        Visit My Substack
-                    </button>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="employment.html">Employment</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <p>Copyright &#169; November 7, 2025 Jonah Robert Zembower. All Rights Reserved.</p>
-    </footer>
+  <script src="script.js"></script>
 </body>
 </html>
