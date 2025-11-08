@@ -92,11 +92,7 @@
 
         .section__text {
             color: white;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            text-align: left;
         }
 
         .section__text h1 {
@@ -222,9 +218,10 @@
 
         .about-containers {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 25px;
             margin-bottom: 30px;
+            justify-items: center;
         }
 
         .details-container {
@@ -234,6 +231,12 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            max-width: 350px;
+            width: 100%;
+        }
+        
+        .details-container:nth-child(3) {
+            grid-column: 1 / -1;
         }
 
         .details-container:hover {
@@ -254,9 +257,8 @@
         }
 
         .details-container .icon {
-            width: 120px;
-            height: auto;
-            object-fit: contain;
+            width: 50px;
+            height: 50px;
         }
 
         .text-container {
