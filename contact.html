@@ -7,8 +7,290 @@
     <title>Contact - Jonah Robert Zembower</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Contact Hero Section */
+        .contact-hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+            color: white;
+        }
+
+        .contact-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .contact-hero p {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Main Contact Container */
+        .contact-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Contact Form Card */
+        .contact-form-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .contact-form-card h2 {
+            font-size: 2rem;
+            color: #2d3748;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+        }
+
+        /* Contact Info Card */
+        .contact-info-card {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .info-box {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .info-box-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .info-icon img {
+            width: 100%;
+            height: 100%;
+            filter: brightness(0) invert(1);
+        }
+
+        .info-box h3 {
+            font-size: 1.5rem;
+            color: #2d3748;
+        }
+
+        .info-box p {
+            color: #4a5568;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .info-box a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .info-box a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .image-gallery h3 {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Social Links */
+        .social-links {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .social-links h3 {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .social-icon img {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Availability Badge */
+        .availability-badge {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(16,185,129,0.3);
+        }
+
+        .availability-badge h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .availability-badge p {
+            color: rgba(255,255,255,0.95);
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation (Keep Same) -->
     <nav id="desktop-nav">
         <div class="logo">Jonah Robert Zembower</div>
         <ul>
@@ -20,20 +302,97 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    <section id="contact">
-        <p class="section__text__p1">Get in Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
-                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-                <p><a href="mailto:jr.zembower@gmail.com?subject=Inquiry&body=Hello,%20I%20would%20like%20to%20know%20more%20about%20your%20services.">jr.zembower@gmail.com</a></p>
+
+    <!-- Contact Hero -->
+    <div class="contact-hero">
+        <p class="section__text__p1">Let's Connect</p>
+        <h1>Get In Touch</h1>
+        <p>I'm always open to discussing new opportunities, collaborations, or just having a chat!</p>
+    </div>
+
+    <!-- Contact Content -->
+    <div class="contact-wrapper">
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+            <h2>Send Me a Message</h2>
+            <form action="mailto:jr.zembower@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your project or inquiry..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Contact Info & Gallery -->
+        <div class="contact-info-card">
+            <!-- Email -->
+            <div class="info-box">
+                <div class="info-box-header">
+                    <div class="info-icon">
+                        <img src="./assets/email.png" alt="Email" />
+                    </div>
+                    <h3>Email</h3>
+                </div>
+                <p><a href="mailto:jr.zembower@gmail.com">jr.zembower@gmail.com</a></p>
             </div>
-            <div class="contact-info-container">
-                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-                <p><a href="https://www.linkedin.com/in/jonah-zembower/">LinkedIn</a></p>
+
+            <!-- LinkedIn -->
+            <div class="info-box">
+                <div class="info-box-header">
+                    <div class="info-icon">
+                        <img src="./assets/linkedin.png" alt="LinkedIn" />
+                    </div>
+                    <h3>LinkedIn</h3>
+                </div>
+                <p><a href="https://www.linkedin.com/in/jonah-zembower/" target="_blank">Connect with me on LinkedIn</a></p>
+            </div>
+
+            <!-- Availability -->
+            <div class="availability-badge">
+                <h3>🟢 Available for Opportunities</h3>
+                <p>Open to consulting, research collaborations, and full-time positions in AI/ML and healthcare analytics</p>
+            </div>
+
+            <!-- Image Gallery -->
+            <div class="image-gallery">
+                <h3>Highlights</h3>
+                <div class="gallery-grid">
+                    <img src="./assets/CMU.jpg" alt="Carnegie Mellon" />
+                    <img src="./assets/about-pic.JPEG" alt="Profile" />
+                    <img src="./assets/20250805_162024635_iOS.jpg" alt="Presentation" />
+                    <img src="./assets/6110460827824921010.jpg" alt="Graduation" />
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <h3>Follow Me</h3>
+                <div class="social-icons">
+                    <div class="social-icon" onclick="location.href='https://www.linkedin.com/in/jonah-zembower/'">
+                        <img src="./assets/linkedin.png" alt="LinkedIn" />
+                    </div>
+                    <div class="social-icon" onclick="location.href='https://github.com/JZembower'">
+                        <img src="./assets/github.png" alt="GitHub" />
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Footer (Keep Same) -->
     <footer>
         <nav>
             <div class="nav-links-container">
@@ -47,7 +406,7 @@
                 </ul>
             </div>
         </nav>
-        <p>Copyright &#169; November 7, 2025 Jonah Robert Zembower. All Rights Reserved.</p>
+        <p>Copyright © November 7, 2025 Jonah Robert Zembower. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
 </body>
