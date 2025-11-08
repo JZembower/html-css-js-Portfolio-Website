@@ -305,6 +305,28 @@ section {
   border-color: rgb(163, 163, 163);
 }
 
+/* HospiTrack project images: side-by-side on desktop, stacked on mobile */
+.project-images {
+  display: flex;
+  gap: 2%;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.project-images img {
+  width: calc(50% - 1%);
+  max-width: 48%;
+  height: auto;
+  border-radius: 6px;
+}
+/* Mobile: stack images */
+@media (max-width: 700px) {
+  .project-images img {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+}
+
+
 /* CONTACT */
 
 #contact {
