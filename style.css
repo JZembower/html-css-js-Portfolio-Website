@@ -266,8 +266,12 @@ section {
   color: white;
 }
 
+.btn-color-1{
+  background: none;
+}
+
 .btn-color-1:hover {
-  background: rgb(0, 0, 0);
+  background: rgb(255,255,255) 0.1rem solid;
 }
 
 .btn-color-2 {
@@ -301,7 +305,7 @@ section {
 }
 
 .project-btn {
-  color: white;
+  color: black;
   border-color: rgb(163, 163, 163);
 }
 
