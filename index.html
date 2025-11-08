@@ -4,11 +4,355 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Jonah Robert Zembower - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
+    <style>
+        /* Modern Hero Section with Lighter Gradient Background */
+        .hero-wrapper {
+            background: linear-gradient(135deg, #a8b5ff 0%, #c4b5e8 50%, #f5c9fb 100%);
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.4;
+        }
+
+        #profile {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 0;
+        }
+
+        .section__pic-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        .profile-image-stack {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .profile-image-stack img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image-stack img:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .floating-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating-badge img {
+            width: 80%;
+            height: 80%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .section__text {
+            color: white;
+            text-align: left;
+        }
+
+        .section__text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2d3748;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.3);
+        }
+
+        .section__text__p1 {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+
+        .section__text__p2 {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-color-1 {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-color-1:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102,126,234,0.4);
+            background: #5568d3;
+        }
+
+        .btn-color-2 {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-color-2:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        #socials-container {
+            display: flex;
+            gap: 15px;
+        }
+
+        #socials-container .icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            padding: 8px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        #socials-container .icon:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* About Section with Cards */
+        #about {
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+        }
+
+        .about-hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .about-hero .section__text__p1 {
+            color: #718096;
+            font-size: 1.2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .about-pic {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .about-pic:hover {
+            transform: scale(1.05);
+        }
+
+        .about-containers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .details-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .details-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(102,126,234,0.2);
+            border-color: #a8b5ff;
+        }
+
+        .details-container h3 {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin: 15px 0;
+        }
+
+        .details-container p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .details-container .icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .text-container {
+            background: linear-gradient(135deg, #a8b5ff25, #c4b5e825);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #a8b5ff;
+        }
+
+        .text-container p {
+            color: #2d3748;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* Journey Timeline Section */
+        .journey-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f5c9fb25, #a8b5ff25);
+            margin: 60px 0;
+        }
+
+        .journey-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 50px;
+        }
+
+        .journey-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .journey-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .journey-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .journey-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .journey-card-content {
+            padding: 25px;
+        }
+
+        .journey-card h3 {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .journey-card p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            #profile {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .section__text {
+                text-align: center;
+            }
+
+            .section__text h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-container {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-container {
+                justify-content: center;
+            }
+
+            #socials-container {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation (Keep Same) -->
     <nav id="desktop-nav">
         <div class="logo">Jonah Robert Zembower</div>
         <ul>
@@ -20,27 +364,40 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    <section id="profile">
-        <div class="section__pic-container">
-            <img src="./assets/profile.jpg" alt="Jonah Zembower Profile Picture" />
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title">Jonah Robert Zembower</h1>
-            <p class="section__text__p2">AI and Operational Health Care Solutions</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/Zembower_Jonah_Resume.docx')">Download CV</button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+
+    <!-- Hero Section with Gradient -->
+    <div class="hero-wrapper">
+        <section id="profile">
+            <div class="section__pic-container">
+                <div class="profile-image-stack">
+                    <img src="./assets/profile.jpg" alt="Jonah Zembower Profile Picture" />
+                    <div class="floating-badge">
+                        <img src="./assets/about-pic.JPEG" alt="Badge" />
+                    </div>
+                </div>
             </div>
-            <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/jonah-zembower/'" />
-                <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/JZembower'" />
+            <div class="section__text">
+                <p class="section__text__p1">Hello, I'm</p>
+                <h1 class="title">Jonah Robert Zembower</h1>
+                <p class="section__text__p2">AI & Operational Healthcare Solutions</p>
+                <div class="btn-container">
+                    <button class="btn btn-color-1" onclick="window.open('./assets/Zembower_Jonah_Resume.docx')">Download CV</button>
+                    <button class="btn btn-color-2" onclick="location.href='./contact.html'">Contact Info</button>
+                </div>
+                <div id="socials-container">
+                    <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" onclick="location.href='https://www.linkedin.com/in/jonah-zembower/'" />
+                    <img src="./assets/github.png" alt="Github" class="icon" onclick="location.href='https://github.com/JZembower'" />
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+
+    <!-- About Section -->
     <section id="about">
-        <p class="section__text__p1">Get To Know More</p>
-        <h1 class="title">About Me</h1>
+        <div class="about-hero">
+            <p class="section__text__p1">Get To Know More</p>
+            <h1 class="title">About Me</h1>
+        </div>
         <div class="section-container">
             <div class="section__pic-container">
                 <img src="./assets/about-pic.JPEG" alt="About picture" class="about-pic" />
@@ -64,27 +421,43 @@
                     </div>
                 </div>
                 <div class="text-container">
-                    <p> Currently pursuing a Master of Science in Health Care Analytics and Information Technology at Carnegie Mellon University, with an emphasis on integrating data-driven insights into the healthcare sector. My core skills include SQL, project management, and machine learning, supported by a strong foundation in data visualization and reporting. Dedicated to applying data expertise to improve organizational processes and outcomes.<br />
+                    <p>Currently pursuing a Master of Science in Health Care Analytics and Information Technology at Carnegie Mellon University, with an emphasis on integrating data-driven insights into the healthcare sector. My core skills include SQL, project management, and machine learning, supported by a strong foundation in data visualization and reporting. Dedicated to applying data expertise to improve organizational processes and outcomes.<br /><br />
 
-Prior to this, I graduated from Seton Hill University with a dual focus on Data Science and Exercise Science, leveraging analytical and technical skills to drive impactful outcomes. At Walmart, contributed to optimizing label placement and printing processes at ACC 7377, achieving significant cost savings during the implementation week with a live dashboard showcasing label quality check results. Prior experience includes conducting biomechanical and ergonomic data analysis at Peak Performance Biomechanics, producing actionable reports tailored to client needs. </p>
+Prior to this, I graduated from Seton Hill University with a dual focus on Data Science and Exercise Science, leveraging analytical and technical skills to drive impactful outcomes. At Walmart, contributed to optimizing label placement and printing processes at ACC 7377, achieving significant cost savings during the implementation week with a live dashboard showcasing label quality check results. Prior experience includes conducting biomechanical and ergonomic data analysis at Peak Performance Biomechanics, producing actionable reports tailored to client needs.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="contact">
-        <p class="section__text__p1">Get in Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
-                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-                <p><a href="mailto:jr.zembower@gmail.com?subject=Inquiry&body=Hello,%20I%20would%20like%20to%20know%20more%20about%20your%20services.">jr.zembower@gmail.com</a></p>
+
+    <!-- Journey Timeline -->
+    <div class="journey-section">
+        <h2>My Journey</h2>
+        <div class="journey-grid">
+            <div class="journey-card">
+                <img src="./assets/CMU.jpg" alt="Carnegie Mellon University" />
+                <div class="journey-card-content">
+                    <h3>Carnegie Mellon University</h3>
+                    <p>Currently pursuing my Master's in Health Care Analytics and Information Technology at the prestigious Heinz College, focusing on AI-driven healthcare solutions.</p>
+                </div>
             </div>
-            <div class="contact-info-container">
-                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-                <p><a href="https://www.linkedin.com/in/jonah-zembower/">LinkedIn</a></p>
+            <div class="journey-card">
+                <img src="./assets/20250805_162024635_iOS.jpg" alt="Research Presentation" />
+                <div class="journey-card-content">
+                    <h3>Research & Innovation</h3>
+                    <p>Presenting cutting-edge research on end coder role optimization and workplace safety concerns, demonstrating leadership in data-driven problem solving.</p>
+                </div>
+            </div>
+            <div class="journey-card">
+                <img src="./assets/6110460827824921010.jpg" alt="Graduation" />
+                <div class="journey-card-content">
+                    <h3>Academic Excellence</h3>
+                    <p>Graduated Magna Cum Laude with dual degrees in Data Science and Exercise Science, combining technical expertise with health sciences knowledge.</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Footer (Keep Same) -->
     <footer>
         <nav>
             <div class="nav-links-container">
@@ -98,7 +471,7 @@ Prior to this, I graduated from Seton Hill University with a dual focus on Data 
                 </ul>
             </div>
         </nav>
-        <p>Copyright &#169; November 7, 2025 Jonah Robert Zembower. All Rights Reserved.</p>
+        <p>Copyright © November 7, 2025 Jonah Robert Zembower. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
 </body>
