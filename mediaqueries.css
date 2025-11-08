@@ -101,3 +101,107 @@
     text-align: justify;
   }
 }
+/* ========== Mobile fixes for research page & general responsiveness ========== */
+
+/* Make research section margins/padding phone-friendly */
+@media screen and (max-width: 900px) {
+  /* Narrow page padding so the content fits comfortably */
+  #research,
+  section {
+    padding: 2rem 1rem !important;
+    margin: 0 0.5rem !important;
+  }
+
+  /* Reduce card padding and improve spacing */
+  .details-container,
+  .color-container {
+    padding: 1rem;
+    margin: 0.6rem 0;
+    border-radius: 8px;
+  }
+
+  /* Scale title and subtitles */
+  .title { font-size: 1.6rem; }
+  .experience-sub-title { font-size: 1.05rem; }
+  .meta { font-size: 0.9rem; }
+
+  /* Make skill chips slightly smaller */
+  .skills li {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  /* Buttons/tap targets */
+  .btn { padding: .8rem; width: auto; min-width: 44px; }
+}
+
+/* Make iframes and embedded PDFs truly responsive using aspect ratio container */
+.responsive-embed {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Default aspect ratio (16:9) for embedded content; overrides for very narrow screens below */
+.responsive-embed::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 */
+}
+
+.responsive-embed iframe,
+.responsive-embed embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Slightly taller ratio for PDF scroll viewers on very small screens */
+@media screen and (max-width: 480px) {
+  .responsive-embed::before { padding-top: 75%; } /* taller for PDFs / embedded readers */
+}
+
+/* Improve embedded PDF fallback if device can't render embed fully */
+.article-container embed {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 280px;
+  display: block;
+}
+
+/* ========== Mobile-friendly navigation fallback (no extra HTML required) ==========
+   If your pages don't have the #hamburger-nav markup, this keeps the #desktop-nav visible
+   but stacked and accessible on smaller screens.
+=============================================================================*/
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 12px 16px;
+    height: auto;
+    background-color: #333;
+  }
+  #desktop-nav .logo { color: #fff; margin-bottom: 6px; }
+  #desktop-nav ul {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  #desktop-nav li { margin: 0; }
+  #desktop-nav a {
+    display: block;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  #desktop-nav a:hover {
+    background: rgba(255,255,255,0.04);
+  }
+}
