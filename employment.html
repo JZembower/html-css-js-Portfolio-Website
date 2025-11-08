@@ -1,242 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Jonah Robert Zembower — Employment</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonah Robert Zembower - Employment</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
-    <style>
-      /* Minimal inline styles to ensure the page looks polished even if external CSS isn't loaded.
-         Move these into style.css if you prefer a single stylesheet. */
-      :root{
-        --brand-900:#08305a;
-        --brand-700:#0b3b6f;
-        --muted:#6b7683;
-        --card-shadow: 0 8px 20px rgba(11,59,111,0.04);
-      }
-      *{box-sizing:border-box}
-      body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#111827; background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 50%); margin:0; padding:0 20px; }
-      nav#desktop-nav { display:flex; align-items:center; justify-content:space-between; padding:20px 0; max-width:1100px; margin:0 auto; }
-      nav#desktop-nav .logo { font-weight:700; letter-spacing:0.4px; color:var(--brand-700); font-size:1.05rem; }
-      nav#desktop-nav ul { display:flex; gap:12px; list-style:none; margin:0; padding:0; align-items:center; }
-      nav#desktop-nav a { color:var(--muted); text-decoration:none; font-size:0.95rem; }
-      .employment-wrap { max-width:1100px; margin:28px auto; display:grid; grid-template-columns: 1fr; gap:28px; padding-bottom:60px; }
-      .hero {
-        background: linear-gradient(135deg, rgba(11,59,111,0.06), rgba(255,175,189,0.03));
-        border-radius:14px; padding:22px; display:flex; gap:18px; align-items:center; box-shadow: 0 8px 24px rgba(8,15,30,0.04);
-      }
-      .hero .left { flex:1; }
-      .hero h3 { margin:0 0 6px 0; color:var(--brand-900); font-size:1.25rem; }
-      .hero p { margin:0; color:#334152; opacity:0.95; }
-      .hero .badges { margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
-      .badge { background:#fff; border:1px solid #e6eef8; padding:6px 10px; border-radius:999px; font-size:0.85rem; color:var(--brand-700); box-shadow: 0 2px 8px rgba(11,59,111,0.03); }
-      .cards { display:grid; gap:18px; }
-      .card {
-        background: linear-gradient(180deg, #ffffff, #fbfdff);
-        border-radius: 12px;
-        padding:18px;
-        display:grid;
-        grid-template-columns: 220px 1fr;
-        gap:18px;
-        align-items:start;
-        box-shadow: var(--card-shadow);
-      }
-      .card figure { margin:0; }
-      .card img { width:220px; height:150px; object-fit:cover; border-radius:10px; display:block; border:4px solid #fff; box-shadow:0 6px 18px rgba(9,50,90,0.06); cursor:pointer; }
-      .card h4 { margin:0 0 6px 0; color:var(--brand-900); font-size:1.05rem; }
-      .meta { font-size:0.9rem; color:var(--muted); margin-bottom:6px; }
-      .impact { background:#f0fbf5; border-left:4px solid #06a06b; padding:10px; border-radius:6px; margin-top:8px; color:#0b4f36; font-weight:600; }
-      .skills { margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; }
-      .skill-pill { background:#eef6ff; border:1px solid #e1efff; padding:6px 10px; border-radius:999px; color:#065aa2; font-size:0.85rem; }
-      .cta { margin-top:12px; color:var(--muted); }
-      footer { text-align:center; padding:36px 0 80px; color:#7b8896; }
-      /* Lightbox */
-      #lightbox { position:fixed; inset:0; display:none; background:rgba(8,15,30,0.75); align-items:center; justify-content:center; z-index:9999; }
-      #lightbox img { max-width:92%; max-height:86%; border-radius:8px; box-shadow:0 18px 50px rgba(0,0,0,0.6); }
-      #lightbox .close { position:absolute; top:24px; right:28px; color:#fff; font-size:18px; background:transparent; border:none; cursor:pointer; }
-      @media (max-width:900px) {
-        .card { grid-template-columns: 1fr; text-align:left; }
-        .card img { width:100%; height:240px; }
-        nav#desktop-nav { padding:14px 0; }
-      }
-    </style>
 </head>
 <body>
-  <nav id="desktop-nav" aria-label="Main navigation">
-    <div class="logo">Jonah Robert Zembower</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="employment.html" aria-current="page">Employment</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <nav id="desktop-nav">
+        <div class="logo">Jonah Robert Zembower</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="employment.html" aria-current="page">Employment</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-  <main class="employment-wrap">
-    <header class="hero" role="banner">
-      <div class="left">
-        <h3>Employment Experience — Design, Data & Operations</h3>
-        <p>Combining rigorous data analysis with human-centered operations improvements to deliver immediate savings and scalable processes across large-scale facilities.</p>
+    <section id="employment">
+        <p class="section__text__p1">Work</p>
+        <h1 class="title">Employment Experience</h1>
 
-        <div class="badges" aria-hidden="true">
-          <span class="badge">Data Dashboards</span>
-          <span class="badge">Operations Optimization</span>
-          <span class="badge">Python / R</span>
-          <span class="badge">Power Apps</span>
-          <span class="badge">Looker Studio</span>
+        <div class="details-container color-container" style="max-width:1100px; margin:1.25rem auto;">
+            <h2>Walmart Automated Consolidation Center (ACC 7377) — Operations Management Analyst Intern</h2>
+
+            <div style="display:flex; gap:1.25rem; align-items:flex-start; flex-wrap:wrap; margin-top:1rem;">
+                <div style="flex:0 0 360px;">
+                    <img src="./assets/IMG_5995.jpg" alt="Walmart consolidation center team" class="project-img" style="width:100%; height:auto; border-radius:10px;">
+                </div>
+
+                <div style="flex:1; min-width:260px;">
+                    <p><strong>Role overview:</strong> Collaborated cross-functionally with Engineering and Operations at ACC 7377 (guided by Greg Beard, SSE Engineer, and Andri Sarmiento, Operations Manager) to optimize label placement and printing workflows and implement real-time label quality monitoring.</p>
+
+                    <ul>
+                        <li>Designed and implemented a data dashboard to automate collection and analysis of print label checks, enabling real-time assessment and resolution of label quality issues.</li>
+                        <li>Generated immediate cost savings of <strong>$6,000</strong> during the initial implementation week compared to the same period in 2024.</li>
+                        <li>Established a scalable process with the potential for substantial further savings upon full implementation across additional shifts and consolidation centers.</li>
+                        <li>Worked directly with engineering and operations leadership to validate changes on the floor and iterate quickly.</li>
+                    </ul>
+
+                    <ul class="skills" aria-label="Walmart skills">
+                        <li>Microsoft Power Apps</li>
+                        <li>Operations Management</li>
+                        <li>Project Management</li>
+                        <li>Looker Studio</li>
+                        <li>Google BigQuery</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <div class="right" style="min-width:240px; text-align:right;">
-        <div style="font-size:0.9rem; color:#334152;">Highlight</div>
-        <div class="impact" aria-live="polite">Generated immediate cost savings of <strong>$6,000</strong> in the first implementation week at Walmart ACC 7377; created a scalable dashboard & process ready to expand across shifts and sites.</div>
-      </div>
-    </header>
+        <div class="details-container color-container" style="max-width:1100px; margin:1.25rem auto;">
+            <h2>Peak Performance Biomechanics — Biomechanical Data Specialist Intern</h2>
 
-    <section class="cards" aria-label="Work experiences">
+            <div style="display:flex; gap:1.25rem; align-items:flex-start; flex-wrap:wrap; margin-top:1rem;">
+                <div style="flex:0 0 360px;">
+                    <img src="./assets/20250723_154155571_iOS.jpg" alt="Peak Performance Biomechanics team" class="project-img" style="width:100%; height:auto; border-radius:10px;">
+                </div>
 
-      <!-- Walmart Card -->
-      <article class="card" id="walmart" aria-labelledby="walmart-title">
-        <figure>
-          <!-- Single image used here for Walmart experience -->
-          <img src="images/IMG_5995.jpg" alt="Walmart consolidation center team" id="img-walmart" data-full="images/IMG_5995.jpg" loading="lazy">
-        </figure>
-        <div>
-          <h4 id="walmart-title">Walmart — Operations Management Analyst Intern (ACC 7377)</h4>
-          <div class="meta">Lebanon, PA — Summer Internship & Operations Collaboration</div>
+                <div style="flex:1; min-width:260px;">
+                    <p><strong>Role overview:</strong> Executed biomechanical and ergonomic analyses using Noraxon and advanced processing in Python or R, producing client-facing visualizations and reports driven by IMU and EMG data.</p>
 
-          <p>
-            Collaborated cross-functionally with the Engineering and Operations teams at Consolidation Center (ACC 7377,
-            under the guidance of Greg Beard (SSE Engineer) and Andri Sarmiento (Operations Manager)) to optimize the label
-            placement and printing process. Designed and implemented a dashboard to automate collection and analysis of label checks,
-            enabling real-time detection and resolution of label quality issues.
-          </p>
+                    <ul>
+                        <li>Conducted comprehensive analysis of IMU and EMG datasets with Noraxon, exporting processed signals for further statistical processing in Python/R.</li>
+                        <li>Developed clear, tailored visualizations and reports to communicate key performance metrics and track client progress.</li>
+                        <li>Produced data-driven deliverables that quantified improvements and supported continued biomechanical and ergonomic interventions.</li>
+                    </ul>
 
-          <ul>
-            <li>Designed and implemented a data dashboard to automate collection & analysis of print label checks for real-time root-cause detection.</li>
-            <li>Generated immediate cost savings of <strong>$6,000</strong> during the initial implementation week vs the same period in 2024.</li>
-            <li>Established a repeatable, scalable process with potential for substantial additional savings when applied across shifts and other consolidation centers.</li>
-            <li>Worked closely with Greg Beard (SSE Engineer) and Andri Sarmiento (Operations Manager) to validate operational assumptions and implement solutions on the floor.</li>
-          </ul>
-
-          <div class="skills" aria-hidden="false">
-            <span class="skill-pill">Microsoft Power Apps</span>
-            <span class="skill-pill">Operations Management</span>
-            <span class="skill-pill">Project Management</span>
-            <span class="skill-pill">Looker Studio</span>
-            <span class="skill-pill">Google BigQuery</span>
-          </div>
-
-          <div class="cta">
-            <small>Role: data-driven process design & operations partnership — emphasis on real-time labeling quality control.</small>
-          </div>
+                    <ul class="skills" aria-label="Biomechanics skills">
+                        <li>Analytical Skills</li>
+                        <li>Noraxon</li>
+                        <li>Biomechanics</li>
+                        <li>IMU / EMG Data</li>
+                        <li>Python / R</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </article>
-
-      <!-- Peak Performance Biomechanics Card -->
-      <article class="card" id="biomech" aria-labelledby="biomech-title">
-        <figure>
-          <!-- Single image used here for Peak Performance Biomechanics experience -->
-          <img src="images/20250723_154155571_iOS.jpg" alt="Peak Performance Biomechanics team" id="img-biomech" data-full="images/20250723_154155571_iOS.jpg" loading="lazy">
-        </figure>
-        <div>
-          <h4 id="biomech-title">Peak Performance Biomechanics — Biomechanical Data Specialist Intern</h4>
-          <div class="meta">Biomechanics Analysis & Client Reporting</div>
-
-          <p>
-            Executed comprehensive analysis of biomechanical and ergonomic data using Noraxon, and advanced processing in
-            Python and R. Built client-specific visualizations from IMU and EMG data to highlight key metrics and quantify progress.
-          </p>
-
-          <ul>
-            <li>Analyzed IMU & EMG datasets with Noraxon software and exported processed signals for statistical analysis in Python/R.</li>
-            <li>Created clear, client-facing visualizations and reports that demonstrate progress and provide actionable recommendations.</li>
-            <li>Translated complex biomechanical signals into coaching cues and measurable KPI improvements for clients.</li>
-          </ul>
-
-          <div class="skills">
-            <span class="skill-pill">Analytical Skills</span>
-            <span class="skill-pill">Noraxon</span>
-            <span class="skill-pill">Biomechanics</span>
-            <span class="skill-pill">IMU / EMG</span>
-            <span class="skill-pill">Python / R</span>
-          </div>
-
-          <div class="cta">
-            <small>Deliverables: client reports, annotated visualizations, and reproducible analysis notebooks.</small>
-          </div>
-        </div>
-      </article>
-
     </section>
 
-  </main>
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="employment.html">Employment</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p>Copyright © November 7, 2025 Jonah Robert Zembower. All Rights Reserved.</p>
+    </footer>
 
-  <!-- Lightbox -->
-  <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-    <button class="close" aria-label="Close image">✕</button>
-    <img src="" alt="Expanded image preview">
-  </div>
-
-  <footer>
-    <p>Copyright © November 7, 2025 Jonah Robert Zembower. All Rights Reserved.</p>
-  </footer>
-
-  <script>
-    // Basic lightbox that opens the clicked experience image.
-    (function(){
-      const lightbox = document.getElementById('lightbox');
-      const lbImg = lightbox.querySelector('img');
-      const closeBtn = lightbox.querySelector('.close');
-
-      function openLightbox(src, alt) {
-        lbImg.src = src;
-        lbImg.alt = alt || 'Expanded image preview';
-        lightbox.style.display = 'flex';
-        lightbox.setAttribute('aria-hidden','false');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeLightbox() {
-        lightbox.style.display = 'none';
-        lightbox.setAttribute('aria-hidden','true');
-        lbImg.src = '';
-        document.body.style.overflow = '';
-      }
-
-      // Add click listeners to each card image
-      const imgs = [
-        document.getElementById('img-walmart'),
-        document.getElementById('img-biomech')
-      ];
-
-      imgs.forEach(img => {
-        if (!img) return;
-        img.addEventListener('click', () => openLightbox(img.getAttribute('data-full') || img.src, img.alt));
-        img.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openLightbox(img.getAttribute('data-full') || img.src, img.alt);
-          }
-        });
-        // Make sure images are keyboard-focusable
-        img.tabIndex = 0;
-        img.setAttribute('role','button');
-        img.setAttribute('aria-label','Open image preview');
-      });
-
-      // close interactions
-      closeBtn.addEventListener('click', closeLightbox);
-      lightbox.addEventListener('click', function(e){
-        if (e.target === lightbox) closeLightbox();
-      });
-      document.addEventListener('keydown', function(e){
-        if (e.key === 'Escape') closeLightbox();
-      });
-    })();
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
